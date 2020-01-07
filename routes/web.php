@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('notas', function(){
+    return 'Aqui esta el listado de notas';
+});
+
+Route::get('notas/crear', function(){
+    return 'Crear Notas';
+});

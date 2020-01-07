@@ -16,3 +16,11 @@ Lista de comando php artisan
 ```
 php artisan list
 ```
+
+
+Front Controller
+
+Archivo `config/app.php` se encuentra el alias de Route
+
+
+Creacion de rutas en el archivo `routes/web.php`
