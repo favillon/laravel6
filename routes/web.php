@@ -32,6 +32,9 @@ Route::get('notas', function(){
 Route::get('notas/crear', function(){
     return view('add-notas');
 });
+Route::get('notas-vacias', function(){
+    return view('notas-vacias'); 
+});
 
 Route::get('notas/{id}/editar/', function($id){
     return 'Editar Nota ' . $id;

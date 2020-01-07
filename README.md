@@ -38,3 +38,10 @@ Blade permite convertir la plantilla en php
 Limpiar las plantillas en la ruta `storage/framework/views/*` o ejecutar el comando `php artisan view:clear`
 
 Para impresion de html en la plantilla de blade se tiene que hacer de la siguiente manera `{!!  $note !!}`
+
+
+### Layouts
+
+Se crean los layouts, se adicionan a los layouts `@yield('content')` para apertura y `@endsection` para su repectivo cierre dentro de ellos va el respectivo codigo. 
+
+Para adicionar los contenido a remplazar  si no existe se puede definir valores por defecto para que una informacion precargada se muestre`@yield('titulo', 'Titulo por defecto')`
