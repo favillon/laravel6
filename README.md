@@ -18,14 +18,23 @@ php artisan list
 ```
 
 
-Front Controller
-
-Archivo `config/app.php` se encuentra el alias de Route
-
+## Front Controller
 
 Creacion de rutas en el archivo `routes/web.php`
+
+En el archivo `config/app.php` se encuentra el alias de Route
 
 Importancia el order de las ruta 
 1. Tipicamente las url con parametros dinamicos debajo de las rutas estaticas
 2. Filtro de Rutas con expresiones regulares
 
+
+## Plantillas y / o Blade
+
+El helper `asset` permite cargar nuestros archivos estaticos (css/imagenes/etc)
+
+Blade permite convertir la plantilla en php 
+
+Limpiar las plantillas en la ruta `storage/framework/views/*` o ejecutar el comando `php artisan view:clear`
+
+Para impresion de html en la plantilla de blade se tiene que hacer de la siguiente manera `{!!  $note !!}`

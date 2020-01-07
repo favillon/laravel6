@@ -16,11 +16,21 @@ Route::get('/', function () {
 });
 
 Route::get('notas', function(){
-    return 'Aqui esta el listado de notas';
+
+    $notas = [
+        'Nota uno',
+        'Nota Dos',
+        'Nota Tres',
+        'Nota Cuatro',
+        '<script>alert("hola mundo")</script>'
+    ];
+    $notaVacias = [];
+    //return view('notas', ['notas' => $notas]); // Pasando Arreglo asociativo
+    return view('notas')->with('notas', $notas)->with('notaVacias', $notaVacias);
 });
 
 Route::get('notas/crear', function(){
-    return 'Crear Notas';
+    return view('add-notas');
 });
 
 Route::get('notas/{id}/editar/', function($id){
