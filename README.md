@@ -24,3 +24,8 @@ Archivo `config/app.php` se encuentra el alias de Route
 
 
 Creacion de rutas en el archivo `routes/web.php`
+
+Importancia el order de las ruta 
+1. Tipicamente las url con parametros dinamicos debajo de las rutas estaticas
+2. Filtro de Rutas con expresiones regulares
+

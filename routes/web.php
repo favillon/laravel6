@@ -22,3 +22,11 @@ Route::get('notas', function(){
 Route::get('notas/crear', function(){
     return 'Crear Notas';
 });
+
+Route::get('notas/{id}/editar/', function($id){
+    return 'Editar Nota ' . $id;
+})->where('id', '[0-9]+'); ;
+
+Route::get('notas/{id}', function($id){
+    return 'Detalle Nota ' . $id;
+})->where('id', '[0-9]+'); ;
