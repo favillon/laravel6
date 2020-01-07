@@ -45,3 +45,11 @@ Para impresion de html en la plantilla de blade se tiene que hacer de la siguien
 Se crean los layouts, se adicionan a los layouts `@yield('content')` para apertura y `@endsection` para su repectivo cierre dentro de ellos va el respectivo codigo. 
 
 Para adicionar los contenido a remplazar  si no existe se puede definir valores por defecto para que una informacion precargada se muestre`@yield('titulo', 'Titulo por defecto')`
+
+### Generar url absolutas
+
+Helper `url`  para concadenar el dominio con la url especificada
+
+Url actual `dd(url()->current());`
+
+Helper `route` se utiliza con el nombre de cada ruta  como segunda parametro podemos indicar un arreglo con los datos de metodo necesario

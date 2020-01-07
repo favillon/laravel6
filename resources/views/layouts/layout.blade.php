@@ -14,15 +14,21 @@
             <nav class="main-nav">
                 <ul class="main-nav-list">
                     <li class="main-nav-item">
-                        <a href="/static/notes.html" class="main-nav-link">
+                        <a href="{{ url('notas') }}" class="main-nav-link">
                             <i class="icon icon-th-list"></i>
                             <span>Ver notas</span>
                         </a>
                     </li>
-                    <li class="main-nav-item active">
-                        <a href="/static/add-note.html" class="main-nav-link">
+                    <li class="main-nav-item">
+                        <a href="{{ route('new.note') }}" class="main-nav-link">
                             <i class="icon icon-pen"></i>
                             <span>Nueva nota</span>
+                        </a>
+                    </li>
+                    <li class="main-nav-item">
+                        <a href="{{ route('note.edit', ['id' => 1]) }}" class="main-nav-link">
+                            <i class="icon icon-pen"></i>
+                            <span>Editar nota 1</span>
                         </a>
                     </li>
                 </ul>

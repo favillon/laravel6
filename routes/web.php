@@ -15,8 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('notas', function(){
-
+Route::get('notas', function(){    
     $notas = [
         'Nota uno',
         'Nota Dos',
@@ -31,15 +30,16 @@ Route::get('notas', function(){
 
 Route::get('notas/crear', function(){
     return view('add-notas');
-});
+})->name('new.note');
+
 Route::get('notas-vacias', function(){
     return view('notas-vacias'); 
 });
 
 Route::get('notas/{id}/editar/', function($id){
     return 'Editar Nota ' . $id;
-})->where('id', '[0-9]+'); ;
+})->where('id', '[0-9]+')->name('note.edit');;
 
 Route::get('notas/{id}', function($id){
     return 'Detalle Nota ' . $id;
-})->where('id', '[0-9]+'); ;
+})->where('id', '[0-9]+');
