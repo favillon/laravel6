@@ -53,3 +53,69 @@ Helper `url`  para concadenar el dominio con la url especificada
 Url actual `dd(url()->current());`
 
 Helper `route` se utiliza con el nombre de cada ruta  como segunda parametro podemos indicar un arreglo con los datos de metodo necesario
+
+
+# Migraciones 
+
+Configurar la conexion a BD en el archivo `.env` reiniciar servicio despues de cambiar las varaibles
+
+
+Ejecutar migraciones
+```
+php artisan migrate
+```
+
+Realizar migraciones en la bd de pruebas 
+```
+php artisan migrate --database=pgsql_test
+```
+
+
+Deshacer migraciones
+```
+php artisan migrate:rollback 
+```
+Referescar las migraciones
+```
+php artisan migrate:refresh
+```
+
+
+# Test
+
+Crear test en la carpeta Feature
+
+```
+php artisan make:test UsersModuleTest
+```
+
+
+# Modelos
+
+
+
+# Pruebas 
+
+Para la ejecucion de pruebas en otra bd  se configura en el archivo `config/database.php` un nueva de conexion con las 
+siguientes caracteristicas
+
+modificar `'default' => env('DB_CONNECTION', '<<CONEXION_BD>>')`
+
+`<<VARIABLE>>` Es la variable a remplzar
+
+```php
+    'pgsql_test' => [
+        'driver' => 'pgsql',
+        'host' => env('DB_HOST', '127.0.0.1'),
+        'port' => env('DB_PORT', '5432'),
+        'database' => env('DB_DATABASE_TEST', '<<BD>>'),
+        'username' => env('PGUSER', env('DB_USERNAME', '<<USER>>')),
+        'password' => env('PGPASSWORD', env('DB_PASSWORD', '<<PWD>>')),
+        'charset' => 'utf8',
+        'prefix' => '',
+        'schema' => 'public',
+        'sslmode' => 'prefer',
+    ],
+```
+
+Y en el archivo `phpunit.xml` se adiciona la siguiente linea ` <server name="DB_CONNECTION" value="pgsql_test"/>`

@@ -43,3 +43,7 @@ Route::get('notas/{id}/editar/', function($id){
 Route::get('notas/{id}', function($id){
     return 'Detalle Nota ' . $id;
 })->where('id', '[0-9]+');
+
+
+// 
+Route::get('/usuarios', 'UserController@index')->name('users.index');

@@ -77,7 +77,18 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
-
+        'pgsql_test' => [
+            'driver' => 'pgsql',
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '5432'),
+            'database' => env('DB_DATABASE_TEST', 'developertest'),
+            'username' => env('PGUSER', env('DB_USERNAME', 'developer')),
+            'password' => env('PGPASSWORD', env('DB_PASSWORD', '123456789')),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ],
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),
