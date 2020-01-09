@@ -99,7 +99,6 @@ php artisan make:test UsersModuleTest
 Para la ejecucion de pruebas en otra bd  se configura en el archivo `config/database.php` un nueva de conexion con las 
 siguientes caracteristicas
 
-modificar `'default' => env('DB_CONNECTION', '<<CONEXION_BD>>')`
 
 `<<VARIABLE>>` Es la variable a remplzar
 
@@ -119,3 +118,21 @@ modificar `'default' => env('DB_CONNECTION', '<<CONEXION_BD>>')`
 ```
 
 Y en el archivo `phpunit.xml` se adiciona la siguiente linea ` <server name="DB_CONNECTION" value="pgsql_test"/>`
+
+
+## Seeders
+
+Al momento de crear los seeder estos se debe vincular al archivo `database/seeds/DatabaseSeeder.php` los cuales seran ejecutados al momento de hacer la vinculacion 
+
+Ejecutar los Seeder con migracion 
+
+```
+php artisan migrate:rollback
+php artisan migrate:refresh --seed
+```
+
+Ejecutar Seeder solos 
+
+```
+php artisan db:seed
+```
